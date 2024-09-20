@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    color: white;
+    background-color: #030303;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.divider {
+    margin: 20px 0;
+    border: none;
+    border-top: 2px solid #FF698D;
+}
+
+.product-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    width: 48%;
+    
+}
+
+label {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #333;
+    white-space: nowrap;
+}
+
+input[type="text"], select {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 2px solid #FF698D;
+    border-radius: 8px;
+    width: 100%;
+    color: #FF698D;
+}
+
+input[type="text"]::placeholder, select {
+    color: #999;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.summary, .image-section {
+    width: 45%; /* Reduced the width slightly */
+}
+
+.summary {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 1.1rem; /* Slightly smaller text */
+}
+
+.image-section {
+    width: 45%; /* Reduced the width slightly */
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #FF698D;
+}
+
+p {
+    font-size: 1.1rem; /* Slightly smaller text */
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+.placeholder-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.shadow-box {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added shadow effect */
+}
+
+/* Make sure that all content fills the height and width of the page */
+html, body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    box-sizing: border-box;
+}
+

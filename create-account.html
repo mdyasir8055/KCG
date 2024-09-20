@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="create-account.css">
+</head>
+<body>
+    <section class="create-account-container">
+        <div class="create-account-content">
+            <header class="create-account-header" aria-hidden="true"></header>
+            <h1 class="create-account-title">Create an account</h1>
+            <form class="create-account-form">
+                <div class="input-group">
+                    <label for="name" class="input-label">Name</label>
+                    <input type="text" id="name" class="input-field" value="Tanzir Rahman" required>
+                </div>
+                <div class="input-group">
+                    <label for="email" class="input-label">Email Address</label>
+                    <input type="email" id="email" class="input-field" value="hello@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password" class="input-label">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" class="input-field" value="●●●●●●●●●●●●●●" required>
+                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/48034c3e990ee0f6bf7715d95ae9b0495afb93260ef4e9074292e8b95c5ed126?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="Toggle password visibility" class="password-toggle-icon" width="24" height="24">
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="signup-button">Sign up</button>
+            </form>
+            <div class="divider" role="separator">or sign up with</div>
+            <button type="button" class="google-signup">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8d1ac79325de3581124eae3594e2b014030da1f31fc318dfcf06b1f79d91ad2?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="Google Icon" class="google-icon" width="24" height="24">
+                Continue with Google
+            </button>
+            <p class="signin-link">
+                Already have an account? <a href="#">Sign in here</a>
+            </p>
+        </div>
+    </section>
+    <script src="create-account.js"></script>
+</body>
+</html>

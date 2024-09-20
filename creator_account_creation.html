@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter, sans-serif;
+    background-color: #f4f5f7;
+}
+.create-account-container {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.create-account-content {
+    display: flex;
+    width: 450px;
+    flex-direction: column;
+    align-items: center;
+}
+.create-account-header {
+    min-height: 36px;
+    margin-bottom: 36px;
+}
+.create-account-title {
+    color: #191d23;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 36px;
+}
+.input-group {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+.input-label {
+    color: #191d23;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.input-field {
+    width: 418px;
+    border-radius: 8px;
+    border: 1px solid #d0d5dd;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #4b5768;
+}
+.password-input-wrapper {
+    position: relative;
+}
+.password-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.signup-button {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #ff698d;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.signup-button:hover {
+    background-color: #ff4f7b;
+}
+.divider {
+    position: relative;
+    display: flex;
+    margin: 24px 0;
+    width: 100%;
+    align-items: center;
+    font-size: 14px;
+    color: #999da3;
+}
+.divider::before,
+.divider::after {
+    content: "";
+    flex-grow: 1;
+    background-color: rgba(75, 87, 104, 0.25);
+    height: 1px;
+    margin: 0 8px;
+}
+.google-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #e4e7eb;
+    color: #4b5768;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.google-signup:hover {
+    background-color: #d0d5dd;
+}
+.google-icon {
+    margin-right: 16px;
+}
+.signin-link {
+    color: #999da3;
+    font-size: 16px;
+    margin-top: 40px;
+    text-align: center;
+}
+.signin-link a {
+    color: #eb5757;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    <section class="create-account-container">
+        <div class="create-account-content">
+            <header class="create-account-header" aria-hidden="true"></header>
+            <h1 class="create-account-title">Create an account</h1>
+            <form class="create-account-form">
+                <div class="input-group">
+                    <label for="name" class="input-label">Name</label>
+                    <input type="text" id="name" class="input-field" value="Tanzir Rahman" required>
+                </div>
+                <div class="input-group">
+                    <label for="email" class="input-label">Email Address</label>
+                    <input type="email" id="email" class="input-field" value="hello@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password" class="input-label">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" class="input-field" value="●●●●●●●●●●●●●●" required>
+                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/48034c3e990ee0f6bf7715d95ae9b0495afb93260ef4e9074292e8b95c5ed126?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="Toggle password visibility" class="password-toggle-icon" width="24" height="24">
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="signup-button">Sign up</button>
+            </form>
+            <div class="divider" role="separator">or sign up with</div>
+            <button type="button" class="google-signup">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8d1ac79325de3581124eae3594e2b014030da1f31fc318dfcf06b1f79d91ad2?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="Google Icon" class="google-icon" width="24" height="24">
+                Continue with Google
+            </button>
+            <p class="signin-link">
+                Already have an account? <a href="#">Sign in here</a>
+            </p>
+        </div>
+    </section>
+    <script>
+        document.querySelector('.password-toggle').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password');
+    const passwordToggleIcon = this.querySelector('img');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordToggleIcon.src = 'hide-password-icon.png'; // Add the correct path for the icon
+        passwordToggleIcon.alt = 'Hide password';
+    } else {
+        passwordInput.type = 'password';
+        passwordToggleIcon.src = 'show-password-icon.png'; // Add the correct path for the icon
+        passwordToggleIcon.alt = 'Show password';
+    }
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sites to Scrape</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <div class="business-header">
+                <span class="business-title">Business</span>
+                <span class="date">May 19, 2023</span>
+            </div>
+            <div class="search-profile">
+                <input type="text" class="search-input" placeholder="Search here">
+                <div class="profile-icon">
+                    <img src="profile.png" alt="Profile Icon">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Sites to Scrap</h1>
+        <form action="#" method="POST">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Site Name</th>
+                        <th>max reviews</th>
+                        <th>min reviews</th>
+                        <th>API key</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="site" value="Reddit"> Reddit</td>
+                        <td><input type="text" name="max_reviews_reddit" placeholder="max"></td>
+                        <td><input type="text" name="min_reviews_reddit" placeholder="min"></td>
+                        <td><input type="text" name="api_key_reddit" placeholder="API key"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="site" value="YouTube"> YouTube</td>
+                        <td><input type="text" name="max_reviews_youtube" placeholder="max"></td>
+                        <td><input type="text" name="min_reviews_youtube" placeholder="min"></td>
+                        <td><input type="text" name="api_key_youtube" placeholder="API key"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="site" value="Steam"> Steam</td>
+                        <td><input type="text" name="max_reviews_steam" placeholder="max"></td>
+                        <td><input type="text" name="min_reviews_steam" placeholder="min"></td>
+                        <td><input type="text" name="api_key_steam" placeholder="API key"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="site" value="imdb"> imdb</td>
+                        <td><input type="text" name="max_reviews_imdb" placeholder="max"></td>
+                        <td><input type="text" name="min_reviews_imdb" placeholder="min"></td>
+                        <td><input type="text" name="api_key_imdb" placeholder="API key"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="site" value="Rotten Tomatoes"> Rotten Tomatoes</td>
+                        <td><input type="text" name="max_reviews_rottentomatoes" placeholder="max"></td>
+                        <td><input type="text" name="min_reviews_rottentomatoes" placeholder="min"></td>
+                        <td><input type="text" name="api_key_rottentomatoes" placeholder="API key"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="site" value="letterboxd"> letterboxd</td>
+                        <td><input type="text" name="max_reviews_letterboxd" placeholder="max"></td>
+                        <td><input type="text" name="min_reviews_letterboxd" placeholder="min"></td>
+                        <td><input type="text" name="api_key_letterboxd" placeholder="API key"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="site" value="metacritic"> metacritic</td>
+                        <td><input type="text" name="max_reviews_metacritic" placeholder="max"></td>
+                        <td><input type="text" name="min_reviews_metacritic" placeholder="min"></td>
+                        <td><input type="text" name="api_key_metacritic" placeholder="API key"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="button-group">
+                <button type="submit" class="get-api-key-btn">Get API Key</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            background-color: #1f1f1f;
+            padding: 20px;
+            position: fixed;
+            left: -250px; /* Hidden by default */
+            transition: left 0.3s ease;
+        }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #ff4c61;
+        }
+
+        .sidebar-heading {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .half-pink {
+            color: #ff4c61;
+            font-weight: bold;
+        }
+
+        .half-white {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            margin-left: 20px;
+            flex: 1;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.sidebar-open {
+            margin-left: 270px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: black;
+            height: 55px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #888888;
+        }
+
+        .search-box {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px;
+            width: 200px;
+            margin-right: 690px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .category-tabs {
+            margin: 10px 0;
+        }
+
+        .category-tabs span {
+            margin-right: 20px;
+            cursor: pointer;
+            color: #888888;
+        }
+
+        .category-tabs span.active-tab {
+            color: #ff527b;
+            font-weight: bold;
+        }
+
+        /* Table Styling */
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .product-table th, .product-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .product-table th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .analyze-btn {
+            background-color: #ff527b;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Center the buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .load-more-btn, .add-product-btn {
+            background-color: #ff527b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 50px;
+            width: 140px;
+        }
+
+        /* Hamburger button */
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: white;
+        }
+
+        /* Important Notice Text Box */
+        .notice-box {
+            background-color: #ffeded;
+            color: #d9534f;
+            border: 1px solid #d9534f;
+            padding: 15px;
+            margin: 20px;
+            margin-left: 500px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 16px;
+            position: relative;
+            bottom: 0;
+            width: 700px; /* Adjust width for margin */
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Section -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-heading">
+            <span class="half-pink">Sentimatrix</span> <span class="half-white">Studio</span>
+        </div>
+        <ul>
+            <li><a href="#"><i class="fas fa-th"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-box"></i> Add Products</a></li>
+            <li><a href="#"><i class="fas fa-cogs"></i> Configure</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#"><i class="fas fa-dollar-sign"></i> Expenses</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Overview</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content" id="mainContent">
+        <div class="topbar">
+            <button class="hamburger" id="hamburgerBtn">&#9776;</button>
+            
+            <input type="text" placeholder="Search here" class="search-box">
+        </div>
+        <h2>Products Available</h2>
+        <div class="category-tabs">
+            <span class="active-tab">All</span>
+            <span>Computer Peripherals</span>
+            <span>Mobile And Power Accessories</span>
+        </div>
+
+        <!-- Product Table -->
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Origin</th>
+                    <th>Last Update</th>
+                    <th>Net Price</th>
+                    <th>Global Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chargers</td>
+                    <td>Korea</td>
+                    <td>17 May, 2023</td>
+                    <td>$57.00</td>
+                    <td>$20.00</td>
+                    <td><button class="analyze-btn">Analyze</button></td>
+                </tr>
+                <tr>
+                    <td>Monitor</td>
+                    <td>Korea</td>
+                    <td>17 May, 2023</td>
+                    <td>$15.00</td>
+                    <td>$20.00</td>
+                    <td><button class="analyze-btn">Analyze</button></td>
+                </tr>
+                <tr>
+                    <td>CPU</td>
+                    <td>Korea</td>
+                    <td>17 May, 2023</td>
+                    <td>$15.00</td>
+                    <td>$20.00</td>
+                    <td><button class="analyze-btn">Analyze</button></td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>Korea</td>
+                    <td>17 May, 2023</td>
+                    <td>$15.00</td>
+                    <td>$20.00</td>
+                    <td><button class="analyze-btn">Analyze</button></td>
+                </tr>
+                <tr>
+                    <td>Keyboard</td>
+                    <td>Korea</td>
+                    <td>17 May, 2023</td>
+                    <td>$15.00</td>
+                    <td>$20.00</td>
+                    <td><button class="analyze-btn">Analyze</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="load-more-btn">Load More</button>
+            <button class="add-product-btn">Add Product</button>
+        </div>
+
+    </div>
+
+    <!-- Important Notice Box -->
+    <div class="notice-box">
+        <strong>Important notice:</strong> Configure your settings before analyzing.
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mainContent = document.getElementById('mainContent');
+
+        hamburgerBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            mainContent.classList.toggle('sidebar-open');
+        });
+
+        document.querySelectorAll('.analyze-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Analyzing product data...');
+            });
+        });
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>

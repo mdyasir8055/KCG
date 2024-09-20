@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Comparison</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            padding-left: 35px;
+            width: 400px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile-info {
+            text-align: right;
+        }
+
+        .profile-info p {
+            margin: 0;
+        }
+
+        .separation-line {
+            height: 2px;
+            background-color: #f3a006;
+            margin: 0 20px;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-section, .right-section {
+            width: 48%;
+        }
+
+        .form-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            width: 150px;
+        }
+
+        .form-group input {
+            padding: 10px;
+            width: calc(100% - 180px);
+            font-size: 18px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .summary{
+            .content-box {
+            border: 2px solid #b4aeae; /* Make the box visible with a dark border */
+            padding: 10px;
+            border-radius: 5px;
+            width: 85%;
+            min-height: 150px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 5px rgba(70, 70, 70, 0.1); /* Added subtle shadow for better visibility */
+        }
+        .text-area-box {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: none;
+            resize: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            outline: none;
+        }
+        }
+        .statistics {
+            background-color: #f9f9f9 ;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            height: auto;
+            position: relative;
+        }
+
+        .summary h3, .statistics h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            position: absolute;
+            top: -25px;
+            left: 20px;
+            background-color: #f9f9f9;
+            padding: 0 10px;
+        }
+
+        .summary p, .statistics .black-box {
+            margin-top: 40px;
+        }
+
+        .black-box {
+            width: 100%;
+            height: 300px;
+            background-color: #000;
+        }
+
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-group button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-group button:hover {
+            background-color: #ff3b3b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <div class="menu-icon">
+            &#9776; <!-- Hamburger menu icon -->
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search here">
+            <span class="search-icon">&#128269;</span> <!-- Search icon -->
+        </div>
+    </div>
+    <div class="profile">
+        <img src="https://via.placeholder.com/40" alt="Profile Image">
+        <div class="profile-info">
+            <p>Bonte</p>
+            <p>Manager</p>
+        </div>
+    </div>
+</header>
+
+<div class="separation-line"></div>
+
+<div class="container">
+    <div class="left-section">
+        <div class="form-section">
+            <h2>Product Comparison</h2>
+            <div class="form-group">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" placeholder="Enter Product Name">
+            </div>
+            <div class="form-group">
+                <label for="website-name">Website:</label>
+                <input type="text" id="website-name" placeholder="Enter Website Name">
+            </div>
+        </div>
+
+        <div class="summary">
+            <h3>Summary</h3>
+            <textarea class="text-area-box"placeholder="write a Summary"></textarea>
+        </div>
+    </div>
+
+    <div class="right-section">
+        <div class="statistics">
+            <h3>Statistics</h3>
+            <div class="black-box"></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="button-group">
+        <button>Back</button>
+        <button>Submit</button>
+    </div>
+</div>
+
+</body>
+</html>

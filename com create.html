@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+        .signin-container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .left-column {
+            width: 56%;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            padding: 120px 60px 0 60px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .logo {
+            background-color: #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .hero-title {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 16px 0;
+        }
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .hero-illustration {
+            max-width: 280px;
+            width: 100%;
+            margin-bottom: 60px;
+        }
+        .right-column {
+            width: 44%;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .signin-heading {
+            color: #333;
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+        .social-signin-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 16px;
+            border: 1px solid #333;
+            border-radius: 40px;
+            font-size: 18px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .social-signin-icon {
+            width: 20px;
+            margin-right: 16px;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 32px 0;
+            color: #666;
+            font-size: 16px;
+        }
+        .divider-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: rgba(102, 102, 102, 0.25);
+        }
+        .divider span {
+            padding: 0 16px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 4px;
+            color: #666;
+            font-size: 14px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(102, 102, 102, 0.35);
+            border-radius: 12px;
+            font-size: 16px;
+        }
+        .password-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .toggle-password {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .toggle-password img {
+            width: 20px;
+            margin-right: 8px;
+        }
+        .forgot-password {
+            color: #111;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 16px;
+            margin-left: 480px;
+        }
+        .signin-button {
+            background-color: #a8164b;
+            justify-content: center;
+            margin-left: 210px;
+            color: #fff;
+            border: none;
+            border-radius: 192px;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.36px;
+            cursor: pointer;
+            margin-top: 24px;
+            width: 180px;
+        }
+        .signup-prompt {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #666;
+            margin-left: 200px;
+        }
+        .signup-link {
+            color: #111;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        @media (max-width: 991px) {
+            .signin-container {
+                flex-direction: column;
+                height: auto;
+            }
+            .left-column, .right-column {
+                width: 100%;
+            }
+            .hero-content {
+                padding: 60px 20px;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            .hero-illustration {
+                max-width: 240px;
+                margin-bottom: 40px;
+            }
+            .right-column {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="signin-container">
+        <section class="left-column" aria-label="Hero section">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cde7921ebcc10e2f837561e03943a93a24bb36652e1931e227af9fdcc2dee676?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="Hero background" class="hero-image">
+            <div class="hero-content">
+                <div>
+                    <div class="logo" aria-hidden="true"></div>
+                    <h1 class="hero-title">Grow your business with us</h1>
+                    <p class="hero-subtitle">Reach your business Goals in record time.</p>
+                </div>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dec1160554e9d47af6768254e958042dacab097033e34c1bbcd9b1f9b37e7cae?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="Business growth illustration" class="hero-illustration">
+            </div>
+        </section>
+        <section class="right-column" aria-label="Sign in form">
+            <h2 class="signin-heading">Sign in</h2>
+            <button class="social-signin-button">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/82fa7bb389eb5aee6c646970cd1ff03f82f103d4c7e805bcaac0e2a53959c40a?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="" class="social-signin-icon" aria-hidden="true">
+                Continue with Google
+            </button>
+            <button class="social-signin-button">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/000ca4085ded23113711a6b9a3e21c06a8971a3f775be630bb14f433ded3d43a?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="" class="social-signin-icon" aria-hidden="true">
+                Continue with Twitter
+            </button>
+            <div class="divider">
+                <div class="divider-line"></div>
+                <span>OR</span>
+                <div class="divider-line"></div>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <div class="password-group">
+                        <label for="password" class="form-label">Password</label>
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28d1b78634eafb5a7b069542d6346404fd95b35131d0c31d9c980ecb7eb3b17c?placeholderIfAbsent=true&apiKey=0cb4874f90d4433e882ff02a5c63238a" alt="" aria-hidden="true">
+                            <span>Hide</span>
+                        </button>
+                    </div>
+                    <input type="password" id="password" class="form-input" required>
+                </div>
+                <a href="#" class="forgot-password">Forget your password</a>
+                <button type="submit" class="signin-button">Sign In</button>
+            </form>
+            <p class="signup-prompt">
+                Don't have an account? <a href="#" class="signup-link">Sign up</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>
